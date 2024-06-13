@@ -2,7 +2,7 @@
 
 ## Introducción
 
-Este proyecto demuestra cómo implementar ChatGPT de manera local utilizando tecnologías web estándar: HTML, CSS y JavaScript. Al integrar ChatGPT en una aplicación web, puedes aprovechar las capacidades de un modelo de lenguaje avanzado para interactuar con los usuarios en tiempo real. Este enfoque es ideal para crear chatbots, asistentes virtuales y otras aplicaciones interactivas basadas en texto.
+Este proyecto demuestra la implementación de un ChatGPT de manera local utilizando tecnologías web estándar: HTML, CSS y JavaScript. Al integrar ChatGPT en una aplicación web, puedes aprovechar las capacidades de un modelo de lenguaje avanzado para interactuar con los usuarios en tiempo real. Este enfoque es ideal para crear chatbots, asistentes virtuales y otras aplicaciones interactivas basadas en texto.
 
 ## Características
 
@@ -14,6 +14,3 @@ Este proyecto demuestra cómo implementar ChatGPT de manera local utilizando tec
 
 - Un navegador web moderno (Google Chrome, Mozilla Firefox, etc.)
 - Conexión a internet para cargar los recursos iniciales, aunque el funcionamiento puede ser local una vez cargado.
-
-
-Este `README.md` proporciona una introducción clara y concisa sobre el proyecto, explica cómo configurarlo y utilizarlo, y destaca las características principales y la estructura del proyecto. Puedes ajustarlo según tus necesidades específicas y detalles de implementación.
