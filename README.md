@@ -4,6 +4,8 @@
 
 Este proyecto demuestra la implementación de un ChatGPT de manera local utilizando tecnologías web estándar: HTML, CSS y JavaScript. Al integrar ChatGPT en una aplicación web, puedes aprovechar las capacidades de un modelo de lenguaje avanzado para interactuar con los usuarios en tiempo real. Este enfoque es ideal para crear chatbots, asistentes virtuales y otras aplicaciones interactivas basadas en texto.
 
+Models: https://github.com/mlc-ai/web-llm
+
 ## Características
 
 - **Interfaz de usuario sencilla**: La aplicación web está construida usando HTML para la estructura y CSS para el estilo, proporcionando una interfaz limpia y fácil de usar.
