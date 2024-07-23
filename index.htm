@@ -9,7 +9,7 @@
 
     <script type="module">
         //Import por module
-        import { CreateWebWorkerMLCEngine } from "https://esm.run/@mlc-ai/web-llm"
+        import { CreateWebWorkerMLCEngine } from "https://cdn.jsdelivr.net/npm/@mlc-ai/web-llm@0.2.46/+esm"
 
         // Type module : mejor option para cargar JS (defer auto)
         // uso de import, export
@@ -29,7 +29,7 @@
         let messages = []
 
         //Seleccion de Modelo
-        const SELECTED_MODEL = 'gemma-2b-it-q4f32_1-MLC'
+        const SELECTED_MODEL = 'Llama-3-8B-Instruct-q4f32_1-MLC-1k'
 
         const engine = await CreateWebWorkerMLCEngine(
             new Worker('worker.js', { type: 'module' }),
@@ -40,7 +40,7 @@
                     if (info.progress === 1) {
                         $loading.parentNode.removeChild($loading)
                         $button.removeAttribute('disabled')
-                        addMessage("¡Hola! Soy un ChatGPT que se ejecuta completamente en tu navegador. ¿En qué puedo ayudarte hoy?", 'bot')
+                        addMessage("¡Hi! Soy un ChatGPT que se ejecuta completamente en tu navegador. ¿En qué puedo colaborarte hoy?", 'bot')
                         $input.focus()
                     }
                 }
