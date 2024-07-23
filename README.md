@@ -16,3 +16,6 @@ Models: https://github.com/mlc-ai/web-llm
 
 - Un navegador web moderno (Google Chrome, Mozilla Firefox, etc.)
 - Conexión a internet para cargar los recursos iniciales, aunque el funcionamiento puede ser local una vez cargado.
+
+- ## Prueba
+- Aqui: https://jhonmasg.github.io/ChatGPTLocal.github.io/
