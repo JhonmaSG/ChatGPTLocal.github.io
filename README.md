@@ -2,7 +2,7 @@
 
 ## Introducción
 
-Este proyecto demuestra la implementación de un ChatGPT de manera local utilizando tecnologías web estándar: HTML, CSS y JavaScript. Al integrar ChatGPT en una aplicación web, puedes aprovechar las capacidades de un modelo de lenguaje avanzado para interactuar con los usuarios en tiempo real. Este enfoque es ideal para crear chatbots, asistentes virtuales y otras aplicaciones interactivas basadas en texto.
+Este proyecto demuestra la implementación de un ChatGPT de manera local utilizando tecnologías WebLLM compatible con OpenIA API y el uso de Workers, ademas de usar HTML, CSS y JavaScript. Al integrar ChatGPT en una aplicación web, puedes aprovechar las capacidades de un modelo de lenguaje avanzado para interactuar con los usuarios en tiempo real. Este enfoque es ideal para crear chatbots, asistentes virtuales y otras aplicaciones interactivas basadas en texto.
 
 Models: https://github.com/mlc-ai/web-llm
 
@@ -17,5 +17,5 @@ Models: https://github.com/mlc-ai/web-llm
 - Un navegador web moderno (Google Chrome, Mozilla Firefox, etc.)
 - Conexión a internet para cargar los recursos iniciales, aunque el funcionamiento puede ser local una vez cargado.
 
-- ## Prueba
+## Prueba
 - Aqui: https://jhonmasg.github.io/ChatGPTLocal.github.io/
