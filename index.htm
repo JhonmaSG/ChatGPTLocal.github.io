@@ -81,7 +81,7 @@
                 const choice = chunk.choices[0]
                 const content = choice?.delta?.content ?? ""
                 reply += content
-                $botMessage.textContent = reply
+                $botMessage.innerHTML  = processText(reply)
             }
 
             $button.removeAttribute('disabled')
@@ -111,17 +111,35 @@
 
             return $text
         }
+
+        function processText(text) {
+            //Replace /n/n dobles
+            let processedText = text.replace(/\n\n/g, '</p><p>')
+
+            // Reemplazar títulos markdown con etiquetas HTML
+            processedText = processedText.replace(/^# (.*$)/gim, '<h1>$1</h1>')
+            processedText = processedText.replace(/^## (.*$)/gim, '<h2>$1</h2>')
+
+            // Reemplazar negritas markdown **texto** con etiquetas <b>
+            processedText = processedText.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
+
+            // Reemplazar listas numeradas 1. texto con etiquetas <ol> y <li>
+            processedText = processedText.replace(/(\d+)\. (.*?)(?=\d+\.|$)/g, '<li>$2</li>')
+            processedText = '<ol>' + processedText.replace(/<li>(.*)<\/li>/g, (match, p1) => `<li>${p1}</li>`) + '</ol>'
+
+            return processedText
+        }
     </script>
 
 </head>
 
 <body>
     <!-- CREACIÓN DE PROPIO CHATGPT LOCAL-->
-    <h1><svg xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 448 512">
-        <path
-            d="M94.1 315.1c0 25.9-21.2 47.1-47.1 47.1S0 341 0 315.1c0-25.9 21.2-47.1 47.1-47.1h47.1v47.1zm23.7 0c0-25.9 21.2-47.1 47.1-47.1s47.1 21.2 47.1 47.1v117.8c0 25.9-21.2 47.1-47.1 47.1s-47.1-21.2-47.1-47.1V315.1zm47.1-189c-25.9 0-47.1-21.2-47.1-47.1S139 32 164.9 32s47.1 21.2 47.1 47.1v47.1H164.9zm0 23.7c25.9 0 47.1 21.2 47.1 47.1s-21.2 47.1-47.1 47.1H47.1C21.2 244 0 222.8 0 196.9s21.2-47.1 47.1-47.1H164.9zm189 47.1c0-25.9 21.2-47.1 47.1-47.1 25.9 0 47.1 21.2 47.1 47.1s-21.2 47.1-47.1 47.1h-47.1V196.9zm-23.7 0c0 25.9-21.2 47.1-47.1 47.1-25.9 0-47.1-21.2-47.1-47.1V79.1c0-25.9 21.2-47.1 47.1-47.1 25.9 0 47.1 21.2 47.1 47.1V196.9zM283.1 385.9c25.9 0 47.1 21.2 47.1 47.1 0 25.9-21.2 47.1-47.1 47.1-25.9 0-47.1-21.2-47.1-47.1v-47.1h47.1zm0-23.7c-25.9 0-47.1-21.2-47.1-47.1 0-25.9 21.2-47.1 47.1-47.1h117.8c25.9 0 47.1 21.2 47.1 47.1 0 25.9-21.2 47.1-47.1 47.1H283.1z" />
-    </svg>  ChatGPT Local</h1>
+    <h1><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path
+                d="M94.1 315.1c0 25.9-21.2 47.1-47.1 47.1S0 341 0 315.1c0-25.9 21.2-47.1 47.1-47.1h47.1v47.1zm23.7 0c0-25.9 21.2-47.1 47.1-47.1s47.1 21.2 47.1 47.1v117.8c0 25.9-21.2 47.1-47.1 47.1s-47.1-21.2-47.1-47.1V315.1zm47.1-189c-25.9 0-47.1-21.2-47.1-47.1S139 32 164.9 32s47.1 21.2 47.1 47.1v47.1H164.9zm0 23.7c25.9 0 47.1 21.2 47.1 47.1s-21.2 47.1-47.1 47.1H47.1C21.2 244 0 222.8 0 196.9s21.2-47.1 47.1-47.1H164.9zm189 47.1c0-25.9 21.2-47.1 47.1-47.1 25.9 0 47.1 21.2 47.1 47.1s-21.2 47.1-47.1 47.1h-47.1V196.9zm-23.7 0c0 25.9-21.2 47.1-47.1 47.1-25.9 0-47.1-21.2-47.1-47.1V79.1c0-25.9 21.2-47.1 47.1-47.1 25.9 0 47.1 21.2 47.1 47.1V196.9zM283.1 385.9c25.9 0 47.1 21.2 47.1 47.1 0 25.9-21.2 47.1-47.1 47.1-25.9 0-47.1-21.2-47.1-47.1v-47.1h47.1zm0-23.7c-25.9 0-47.1-21.2-47.1-47.1 0-25.9 21.2-47.1 47.1-47.1h117.8c25.9 0 47.1 21.2 47.1 47.1 0 25.9-21.2 47.1-47.1 47.1H283.1z" />
+        </svg> ChatGPT Local</h1>
+    <div class="separator"></div>
     <main>
         <ul>
             <li class="loading">

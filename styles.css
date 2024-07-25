@@ -11,12 +11,17 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-
     svg {
         width: 40px;
         fill: var(#fff);
         margin-right: 15px;
     }
+}
+
+.separator {
+    margin: 10px 0;
+    border: 2px solid rgb(217, 159, 255);
+    border-radius: 50%;
 }
 
 main {
@@ -35,7 +40,7 @@ main {
     scroll-behavior: smooth;
 }
 
-ul {
+ul, ol {
     display: flex;
     flex-direction: column;
     list-style: none;
@@ -72,8 +77,9 @@ ul {
 
         span,
         p {
-            background: rgb(219, 236, 255);
+            background: rgb(150, 247, 250);
         }
+        
     }
 
     &.bot {
@@ -81,7 +87,7 @@ ul {
 
         span,
         p {
-            background: rgb(253, 251, 116);
+            background: rgb(217, 159, 255);
         }
     }
 }
@@ -100,13 +106,14 @@ form {
     }
 
     button {
-        background: #09f;
+        background: rgb(217, 159, 255);
         border: 0;
-        color: white;
+        color: rgb(255, 255, 255);
         border-radius: 6px;
+        border: 1px solid rgb(177, 177, 177);
         cursor: pointer;
         padding: 8px;
-        transition: background .3s ease;
+        transition: background .5s ease;
 
         &[disabled] {
             background: #ccc;
@@ -115,7 +122,8 @@ form {
         }
 
         &:hover {
-            background: rgb(0, 104, 173);
+            background: rgb(187, 86, 255);
+            color: rgb(255, 255, 255);
         }
     }
 }
@@ -139,7 +147,7 @@ small {
     height: 100%;
     align-items: center;
     flex-direction: column;
-    margin-top: 50%;
+    margin-top: 35%;
 
 
     i {
@@ -149,7 +157,7 @@ small {
         display: grid;
         border: 4px solid #0000;
         border-radius: 50%;
-        border-right-color: #25b09b;
+        border-right-color: rgb(187, 86, 255);
         animation: l15 1s infinite linear;
     }
 
