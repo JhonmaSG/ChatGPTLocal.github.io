@@ -27,20 +27,21 @@
         const $loading = $('.loading')
 
         let messages = []
-
+        let end = false
         //Seleccion de Modelo
         // QWen: Qwen2-0.5B-Instruct-q0f16-MLC
         // Llama 3: Llama-3-8B-Instruct-q4f32_1-MLC-1k
-        const SELECTED_MODEL = 'Qwen2-0.5B-Instruct-q0f16-MLC'
+        const SELECTED_MODEL = 'Llama-3-8B-Instruct-q4f32_1-MLC-1k'
 
         const engine = await CreateWebWorkerMLCEngine(
-            new Worker('worker.js', { type: 'module' }),
+            new Worker('./worker.js', { type: 'module' }),
             SELECTED_MODEL,
             {
                 initProgressCallback: (info) => {
-                    $info.textContent = `${info.text}%`
-                    if (info.progress === 1) {
-                        $loading.parentNode.removeChild($loading)
+                    $info.textContent = info.text
+                    if (info.progress === 1 && !end) {
+                        end = true
+                        $loading?.parentNode?.removeChild($loading)
                         $button.removeAttribute('disabled')
                         addMessage("¡Hi! Soy un ChatGPT que se ejecuta completamente en tu navegador. ¿En qué puedo colaborarte hoy?", 'bot')
                         $input.focus()
@@ -103,10 +104,11 @@
             const $text = $newMessage.querySelector('p')
 
             $text.textContent = text
-            $who.textContent = sender == 'bot' ? 'GPT' : 'Tú'
+            $who.textContent = sender === 'bot' ? 'GPT' : 'Tú'
             $newMessage.classList.add(sender)
 
             $messages.appendChild($newMessage)
+
             $container.scrollTop = $container.scrollHeight
 
             return $text
